@@ -1,32 +1,36 @@
-SOR:
+2022/6/9:
 
-Gyarto: Heineken
-Termek: Ipa
-Alkoholszazalek: 4.6
-Sor: 4.
+ROVIDITAL:
+
+Gyarto: fs
+Termek: fs
+Alkoholszazalek: 98
+Sor: 8.
 
 ===================
-SOR:
+2022/6/9:
 
-Gyarto: Pecsi
-Termek: vilagos
-Alkoholszazalek: 4.2
-Sor: 4.
+BOR:
+
+Gyarto: fs
+Termek: fs
+Evjarat: 21
+Sor: 1.
+
+===================
+UDITO:
+
+Gyarto: Fanta
+Termek: kicsi
+Kiszereles: 0.5
+Sor: 0.
 
 ===================
 BOR:
 
-Gyarto: Lafiesta
-Termek: feherbor
-Evjarat: 2016
-Sor: 6.
-
-===================
-BOR:
-
-Gyarto: Monkovits
-Termek: voros
-Evjarat: 2017
-Sor: 7.
+Gyarto: fs
+Termek: fs
+Evjarat: 21
+Sor: 1.
 
 ===================

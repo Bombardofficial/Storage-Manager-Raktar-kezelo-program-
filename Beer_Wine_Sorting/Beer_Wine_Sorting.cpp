@@ -4,7 +4,7 @@
 #include "bor.h"
 #include "sor.h"
 #include <fstream>
-
+#include <windows.h>
 int main()
 {
 	raktar r;
@@ -13,8 +13,10 @@ int main()
 	bool mehet = true;
 	
 	do {
-		
-		cout << "Italbolt raktar\n";
+		//system("Color 70");
+		char esc_char = 27;
+		cout << esc_char << "[1m" << "Italbolt raktar" << esc_char << "[0m" << endl;
+		//cout << "\e[1mItalbolt raktar\n";
 		cout << "________________________\n\n";
 		cout << "	1. Uj termek felvitele\n";
 		cout << "	2. Hozzaadott termekek listaja\n";
@@ -80,31 +82,45 @@ int main()
 			}
 			if (bevitel == 'i') {
 				mehet = false;
+				
+				//Adatbázis módosítása/bõvítése
+				string line;
+
+				ifstream ini_file{ "Mentes.txt" };
+				ofstream out_file("Raktar.txt", ios::app);
+
+				////Dátum fejléc beírása////
+				struct tm newtime;
+				std::time_t t = std::time(0);   // mostani ido
+				localtime_s(&newtime, &t);
+				out_file << "\n" << (newtime.tm_year + 1900) << '/'
+					<< (newtime.tm_mon + 1) << '/'
+					<< newtime.tm_mday
+					<< ":\n\n";
+
+				////Adatok másolása////
+				if (ini_file && out_file) {
+
+					while (getline(ini_file, line)) {
+						out_file << line << "\n";
+					}
+
+					cout << "Mentes befejezve.\n";
+
+				}
+				else {
+					printf("Hiba tortent a mentes folyaman.");
+				}
+				ofstream file("Mentes.txt");
+				file << "";
+				ini_file.close();
+				out_file.close();
 			}
 			else if (bevitel == 'n') {
 				mehet = true;
 			}    
 			
-			string line;
 			
-			ifstream ini_file{ "Mentes.txt" };
-			ofstream out_file{ "Raktar.txt" };
-
-			if (ini_file && out_file) {
-
-				while (getline(ini_file, line)) {
-					out_file << line << "\n";
-				}
-
-				cout << "Mentes befejezve.\n";
-
-			}
-			else {
-				printf("Hiba tortent a mentes folyaman.");
-			}
-
-			ini_file.close();
-			out_file.close();
 		}
 	} while (mehet);
 }

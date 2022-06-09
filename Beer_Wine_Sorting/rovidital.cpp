@@ -1,64 +1,61 @@
-#include "bor.h"
+#include "rovidital.h"
 #include <iostream>
 #include <fstream>
 
-int bor::melyikSor()
+int rovidital::melyikSor()
 {
-	if (evjarat % 10 < 1) {
+	if (alkohol < 15) {
 		return 0;
 	}
-	else if (evjarat % 10 < 2) {
+	else if (alkohol < 25) {
 		return 1;
 	}
-	else if (evjarat % 10 < 3) {
+	else if (alkohol < 35) {
 		return 2;
 	}
-	else if (evjarat % 10 < 4) {
+	else if (alkohol < 45) {
 		return 3;
 	}
-	else if (evjarat % 10 < 5) {
+	else if (alkohol < 55) {
 		return 4;
 	}
-	else if (evjarat % 10 < 6) {
+	else if (alkohol < 65) {
 		return 5;
 	}
-	else if (evjarat % 10 < 7) {
+	else if (alkohol < 75) {
 		return 6;
 	}
-	else if (evjarat % 10 < 8) {
+	else if (alkohol < 85) {
 		return 7;
 	}
-	else if (evjarat % 10 < 9) {
-		return 8;
-	}
 	else {
-		return 9;
+		return 8;
 	}
 }
 
-void bor::kiir()
+void rovidital::kiir()
 {
-	cout << "BOR:\n\n";
-	
+	cout << "Rovidital:\n\n";
+
 	cout << "Gyarto: " << this->gyarto << endl;
-	
+
 	cout << "Termek: " << this->termek << endl;
-	
-	cout << "Evjarat: " << this->evjarat << endl;
-	
+
+	cout << "Alkoholszazalek: " << this->alkohol << endl;
+
 	cout << "Sor: " << this->melyikSor() << "." << endl << endl;
-	
+
 	cout << "===================\n";
 }
 
-void bor::mentes()
+void rovidital::mentes()
 {
 	ofstream fajl;
 	fajl.open("Mentes.txt", ios::app);
-	fajl << "BOR:\n\n";
+	fajl << "ROVIDITAL:\n\n";
 	fajl << "Gyarto: " << this->gyarto << endl;
 	fajl << "Termek: " << this->termek << endl;
-	fajl << "Evjarat: " << this->evjarat << endl;
+	fajl << "Alkoholszazalek: " << this->alkohol << endl;
 	fajl << "Sor: " << this->melyikSor() << "." << endl << endl;
 	fajl << "===================\n";
 	fajl.close();

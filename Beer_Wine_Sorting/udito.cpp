@@ -1,64 +1,49 @@
-#include "sor.h"
+#include "udito.h"
 #include <iostream>
 #include <fstream>
 
-int sor::melyikSor()
+int udito::melyikSor()
 {
-	if (alkohol < 1) {
+	if (kiszereles < 1) {
 		return 0;
 	}
-	else if (alkohol < 2) {
+	else if (kiszereles < 1.5) {
 		return 1;
 	}
-	else if (alkohol < 3) {
+	else if (kiszereles < 2) {
 		return 2;
 	}
-	else if (alkohol < 4) {
+	else if (kiszereles < 2.5) {
 		return 3;
 	}
-	else if (alkohol < 5) {
-		return 4;
-	}
-	else if (alkohol < 6) {
-		return 5;
-	}
-	else if (alkohol < 7) {
-		return 6;
-	}
-	else if (alkohol < 8) {
-		return 7;
-	}
-	else if (alkohol < 9) {
-		return 8;
-	}
 	else {
-		return 9;
+		return 4;
 	}
 }
 
-void sor::kiir()
+void udito::kiir()
 {
-	cout << "SOR:\n\n";
-	
+	cout << "Udito:\n\n";
+
 	cout << "Gyarto: " << this->gyarto << endl;
-	
+
 	cout << "Termek: " << this->termek << endl;
-	
-	cout << "Alkoholszazalek: " << this->alkohol << endl;
-	
+
+	cout << "Kiszereles: " << this->kiszereles << endl;
+
 	cout << "Sor: " << this->melyikSor() << "." << endl << endl;
-	
+
 	cout << "===================\n";
 }
 
-void sor::mentes()
+void udito::mentes()
 {
 	ofstream fajl;
 	fajl.open("Mentes.txt", ios::app);
-	fajl << "SOR:\n\n";
+	fajl << "UDITO:\n\n";
 	fajl << "Gyarto: " << this->gyarto << endl;
 	fajl << "Termek: " << this->termek << endl;
-	fajl << "Alkoholszazalek: " << this->alkohol << endl;
+	fajl << "Kiszereles: " << this->kiszereles << endl;
 	fajl << "Sor: " << this->melyikSor() << "." << endl << endl;
 	fajl << "===================\n";
 	fajl.close();

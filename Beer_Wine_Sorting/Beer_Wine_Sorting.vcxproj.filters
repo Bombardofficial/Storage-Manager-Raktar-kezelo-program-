@@ -30,6 +30,12 @@
     <ClCompile Include="raktar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="rovidital.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="udito.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ital.h">
@@ -42,6 +48,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="raktar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rovidital.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="udito.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

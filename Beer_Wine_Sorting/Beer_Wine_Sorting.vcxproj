@@ -143,13 +143,17 @@
     <ClCompile Include="bor.cpp" />
     <ClCompile Include="ital.cpp" />
     <ClCompile Include="raktar.cpp" />
+    <ClCompile Include="rovidital.cpp" />
     <ClCompile Include="sor.cpp" />
+    <ClCompile Include="udito.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bor.h" />
     <ClInclude Include="ital.h" />
     <ClInclude Include="raktar.h" />
+    <ClInclude Include="rovidital.h" />
     <ClInclude Include="sor.h" />
+    <ClInclude Include="udito.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Raktar.txt" />
